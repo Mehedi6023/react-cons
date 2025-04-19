@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import banner from "../assets/banner.png";
-const Hero = () => {
+const Hero = ({handleSearch}) => {
+  const [searchText, setSearchText] = useState('')
   return (
     <div className="hero bg-base-200">
       <div className="hero-content flex-col">
@@ -12,7 +13,10 @@ const Hero = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <form className="w-full flex flex-col sm:flex-row gap-6 justify-center items-center  my-10">
+          <form onSubmit={(e) => (
+            handleSearch(e, searchText),
+            setSearchText('')
+          )} className="w-full flex flex-col sm:flex-row gap-6 justify-center items-center  my-10">
             <label className="input w-[70%]">
               <svg
                 className="h-[1em] opacity-50"
@@ -30,9 +34,9 @@ const Hero = () => {
                   <path d="m21 21-4.3-4.3"></path>
                 </g>
               </svg>
-              <input className="w-[100%] inline-block" type="search" required placeholder="Search Phone by name" />
+              <input value={searchText} onChange={e => setSearchText(e.target.value)} className="w-[100%] inline-block" type="search" required placeholder="Search Phone by name" />
             </label>
-            <button className="btn btn-primary">Search</button>
+            <button type="submit" className="btn btn-primary">Search</button>
           </form>
         </div>
       </div>
