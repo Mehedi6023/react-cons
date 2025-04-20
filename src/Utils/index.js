@@ -1,3 +1,4 @@
+
 export  const getDataFromLocal = () => {
   const favoritesSTRFromLocal = localStorage.getItem("favorites");
 
@@ -15,6 +16,7 @@ export const addToLocal = (phone) => {
   const newFavoritesSTR = JSON.stringify(favoritesArr);
   localStorage.setItem("favorites", newFavoritesSTR);
 };
+
 
 export const removeFavorite = id => {
   const favorites = getDataFromLocal()
