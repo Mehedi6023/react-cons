@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import banner from "../assets/banner.png";
+import Button from "../UI/Button";
 const Hero = ({handleSearch}) => {
   const [searchText, setSearchText] = useState('')
   return (
@@ -36,7 +37,7 @@ const Hero = ({handleSearch}) => {
               </svg>
               <input value={searchText} onChange={e => setSearchText(e.target.value)} className="w-[100%] inline-block" type="search" required placeholder="Search Phone by name" />
             </label>
-            <button type="submit" className="btn btn-primary">Search</button>
+            <Button type='submit' label='Search' />
           </form>
         </div>
       </div>

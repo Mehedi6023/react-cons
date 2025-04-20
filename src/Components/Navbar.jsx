@@ -39,7 +39,6 @@ const Navbar = () => {
             <Links />
           </ul>
         </div>
-        <a className="btn">Button</a>
       </div>
     </div>
   );
